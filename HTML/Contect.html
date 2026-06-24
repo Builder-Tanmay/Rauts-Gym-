@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contect</title>
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="small-screen.css">
+    <link rel="stylesheet" href="rauts2.0.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --brand-red: #de1515; /* Matches the button and error text */
+            --text-gray: #898989;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #cacaca;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .content-wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* --- Left Column (Branches) --- */
+        .branch-icon {
+            color: var(--text-gray);
+            width: 20px;
+            text-align: center;
+            margin-right: 12px;
+            font-size: 1.1rem;
+            float: left;
+            margin-top: 3px;
+        }
+        .branch-text {
+            overflow: hidden; /* Clearfix for floated icon */
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* --- Right Column (Form) --- */
+        .form-label {
+            color: #bfbfbf;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .form-label i {
+            margin-right: 8px;
+            color: var(--text-gray);
+        }
+        
+        /* Custom Input Styling (Transparent with bottom border) */
+        .custom-input {
+            background-color: transparent !important;
+            border: none;
+            border-bottom: 1px solid #444;
+            border-radius: 0;
+            color: #fff !important;
+            padding: 5px 0 10px 0;
+            box-shadow: none !important;
+        }
+        
+        /* Error State Styling (Matching the video) */
+        .custom-input.is-invalid {
+            border-bottom: 1px solid red;
+            background-image: none; /* Removes default bootstrap exclamation mark */
+        }
+        .error-text {
+            color: varred;
+            font-size: 0.75rem;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Custom Checkbox */
+        .form-check-input {
+            background-color: transparent;
+            border-color: #444;
+        }
+        .form-check-input:checked {
+            background-color: #c91f1f;
+            border-color: red;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #c91f1f;
+            color: white;
+        }
+
+        /* --- Maps Section --- */
+        .map-container {
+           border-radius: 4px;
+            overflow: hidden;
+            
+           
+        }
+
+        body{
+            background-image: url(IMG/B10_dark_top_red_bottom_fade.png);
+            background-size: cover;
+        }
+        .contttt{
+            color: #c91f1f;
+        }
+        
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top align-item-center">
+        <div class="container-fluid">
+                <img src="IMG/Screenshot 2026-03-28 101138-Photoroom.png" alt="" height="70px" >
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto gap-5">
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2 ps-" aria-current="page" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2 " href="aboutpage.html">ABOUT</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Contect.html">CONTECT</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Services.html">SERVICES</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Schedule.html">SCHEDULE</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link active fw-bold no-underline me-2 join-link" href="https://wellversed.in/"><i class="fa-solid fa-cart-arrow-down"></i>SHOP NOW</a>
+                 </li>
+                
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+<div class="container ttt-tt py-5 mt-4">
+    
+    <div class="text-center contttt mb-5 pb-4">
+        <h1 class="fw-bold display-5">Contacts</h1>
+    </div>
+
+    <div class="content-wrapper ">
+        <div class="row  gx-5 mb-5 pb-5">
+            
+            <div class="col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+                <h2 class="fw-bold mb-4">Our Branches</h2>
+                
+                <div>
+                    <i class="fa-regular fa-building branch-icon"></i>
+                    <p class="branch-text">
+                        Ramee Guestline Hotel, 462, AB Nair Rd, Vikhroli, Mumbai,<br>
+                        Maharashtra 400079
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa-regular fa-building branch-icon"></i>
+                    <p class="branch-text">
+                        Ramee Techome, plot no-796, 797, 3rd Rd, Govind Dham,<br>
+                        Khar West, Mumbai, Maharashtra 400052
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-mobile-screen branch-icon"></i>
+                    <p class="branch-text fw-semibold mb-2">+91 9867896542</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-mobile-screen branch-icon"></i>
+                    <p class="branch-text fw-semibold">+91 9867011577</p>
+                </div>
+
+                <div class="mt-4">
+                    <i class="fa-regular fa-envelope branch-icon"></i>
+                    <p class="branch-text">rautsgym739@mail.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-7 ps-lg-4">
+                <form action="#" method="POST">
+                    
+                    <div class="row g-4 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fa-regular fa-user"></i> Name</label>
+                            <input type="text" class="form-control custom-input is-invalid" required>
+                            
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fa-regular fa-envelope"></i> Email Address</label>
+                            <input type="email" class="form-control custom-input is-invalid" required>
+                            
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-3 mt-1">
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fa-solid fa-mobile-screen"></i> Phone</label>
+                            <input type="tel" class="form-control custom-input is-invalid" required>
+                            
+                        </div>
+                        
+                            <div class="col-md-6">
+                            <label class="form-label"><i class="fa-regular fa-file-lines"></i> Subject</label>
+                            <input type="text" class="form-control custom-input is-invalid" required>
+                            
+                        </div>
+                    </div>
+
+                    <div class="mb-4 mt-4">
+                        <label class="form-label"><i class="fa-regular fa-comment-dots"></i> How can we help you? Feel free to get in touch!</label>
+                        <input type="text" class="form-control custom-input is-invalid" required>
+                        
+                    </div>
+
+                    <div class="d-flex align-items-center flex-wrap gap-4 mt-5">
+                        <button type="button" class="btn btn-submit">Get In Touch</button>
+                        
+                        <div class="form-check m-0">
+                            <input class="form-check-input shadow-none" type="checkbox" id="privacyPolicy">
+                            <label class="form-check-label text-gray ms-2" for="privacyPolicy" style="font-size: 0.85rem;">
+                                I agree to the <a href="#" class="text-gray text-decoration-underline">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="row  ">
+            <div class="col-md-12">
+                <div class="map-container shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.081827083049!2d72.82390757585094!3d19.10398645084934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9955776d6ad%3A0x644c11bdc7d0d04c!2sRamee%20Guestline%20Hotel%20Juhu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="map-container shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.920556209531!2d72.83151857584988!3d19.06721525225134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c91350172e25%3A0x28afbc2594a11c8!2sRamee%20Techome!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+   <footer class="dark-footer position-relative">
+    <div class="containere pt-4 ">
+        <div class="row gy-5">
+            
+            <div class="col-lg-5 pe-lg-5">
+                <h2 class="text-white fw-bold mb-4">Raut<span class="fw-light">S</span></h2>
+                
+                <p class="text-white fs-4 lh-base mb-5 pe-lg-4">
+                    A Place Where Strength and<br>
+                    Community Grow Together
+                </p>
+                
+                <form action="#" method="POST" class="pe-lg-5">
+                    <div class="mb-4">
+                        <input type="email" class="form-control custom-newsletter-input" placeholder="Your Email Address" required>
+                    </div>
+                    <button type="submit" class="btn btn-subscribe rounded-0">SUBSCRIBE</button>
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Services</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><a href="#" class="footer-link">Personal Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Group Fitness Classes</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Strength and Conditioning</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Cardio Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Functional Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Wellness and Recovery</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">Contacts</h4>
+                
+                <address class="footer-text mb-3" style="font-style: normal;">
+                    27 Division St, New York,<br>
+                    NY 10002, USA
+                </address>
+                
+                <p class="footer-text mb-4">+91 8974563210</p>
+                <p class="text-white mb-4">rautsgym739@mail.com</p>
+                
+                <div class="d-flex gap-2 mt-2">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.091470661257!2d72.91517663145665!3d19.10364273410314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7c11244d31f%3A0x5455be6e1661b527!2sRaut&#39;s%20Gymnasium%20And%20Fitness%20Center!5e0!3m2!1sen!2sin!4v1774559609177!5m2!1sen!2sin" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps h-50 py-5"></iframe> 
+        </div>
+    </div>
+
+    <div class="footer-bottom-bar border-top">
+        <div class="container position-relative">
+            <div class="row py-4 align-items-center">
+                
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="footer-text">Copyright © 2026 RautS byWebGeniusLab. All Rights Reserved</small>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end pe-md-5">
+                    <a href="#" class="footer-link small me-4">Terms of Use</a>
+                    <a href="#" class="footer-link small pe-md-4">Privacy Policy</a>
+                </div>
+                
+            </div>
+            
+            <a href="#" class="back-to-top d-none d-md-flex">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+            
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>
+</html>

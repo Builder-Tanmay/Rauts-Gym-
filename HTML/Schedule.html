@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rauts2.0.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <title>Schedule</title>
+
+     <style>
+        :root {
+            --bg-dark: #111111;
+            --table-bg: #161616;
+            --border-color: #2a2a2a;
+            --brand-red: #ff3333;
+            --text-gray: #888888;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+            overflow-x: hidden;
+            background-image: url(../IMG/about\ hero\ banner.png);
+            background-size: cover;
+            
+        }
+        
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header Styling --- */
+        .section-subtitle {
+            color: red;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .section-subtitle::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--brand-red);
+            margin-right: 15px;
+        }
+        .display-heading {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+        }
+
+        /* --- Custom Dark Table --- */
+        .custom-table-wrapper {
+            background-color: var(--table-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+        .schedule-table th, 
+        .schedule-table td {
+            border: 1px solid var(--border-color);
+            padding: 25px 20px;
+            vertical-align: middle;
+        }
+        
+        /* Table Headers */
+        .schedule-table thead th {
+            color: gray;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-bottom: 2px solid red; /* Red line under header */
+            padding: 20px;
+        }
+
+        /* Time Column */
+        .schedule-table td:first-child {
+            color: red;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Data Cells */
+        .class-name {
+            display: block;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+        .instructor-name {
+            display: block;
+            font-size: 0.8rem;
+            color: gray;
+        }
+        
+        /* Empty Cell */
+        .empty-cell { color: var(--border-color); }
+
+        /* Hover Effect for Class Cells */
+        .schedule-table tbody td:not(:first-child):hover {
+            background-color: rgba(255, 51, 51, 0.05); /* Faint red tint */
+            cursor: default;
+        }
+
+        /* Responsive Title sizing for mobile */
+        @media (max-width: 768px) {
+            .display-heading { font-size: 2.5rem; }
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top align-item-center">
+        <div class="container-fluid">
+                <img src="IMG/Screenshot 2026-03-28 101138-Photoroom.png" alt="" height="70px" >
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto gap-5">
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2 ps-" aria-current="page" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2 " href="aboutpage.html">ABOUT</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Contect.html">CONTECT</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Services.html">SERVICES</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Schedule.html">SCHEDULE</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link active fw-bold no-underline me-2 join-link" href="https://wellversed.in/"><i class="fa-solid fa-cart-arrow-down"></i>SHOP NOW</a>
+                 </li>
+                
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <section class="container py-5 my-5">
+        <div class="content-wrapper">
+            
+            <div class="mb-5">
+                <div class="section-subtitle mb-2">Weekly Timetable</div>
+                <h1 class="display-heading">Class Schedule.</h1>
+            </div>
+
+            <div class="custom-table-wrapper table-responsive shadow-lg">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6:00 AM</td>
+                            <td><span class="class-name">HIIT</span><span class="instructor-name">Sneha M.</span></td>
+                            <td><span class="class-name">Power Lift</span><span class="instructor-name">Arjun R.</span></td>
+                            <td><span class="class-name">HIIT</span><span class="instructor-name">Sneha M.</span></td>
+                            <td><span class="class-name">Power Lift</span><span class="instructor-name">Arjun R.</span></td>
+                            <td><span class="class-name">HIIT</span><span class="instructor-name">Sneha M.</span></td>
+                            <td><span class="class-name">Boxing</span><span class="instructor-name">Rahul K.</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>8:00 AM</td>
+                            <td><span class="class-name">Yoga</span><span class="instructor-name">Priya S.</span></td>
+                            <td><span class="class-name">Boxing</span><span class="instructor-name">Rahul K.</span></td>
+                            <td><span class="class-name">Yoga</span><span class="instructor-name">Priya S.</span></td>
+                            <td><span class="class-name">Boxing</span><span class="instructor-name">Rahul K.</span></td>
+                            <td><span class="class-name">Yoga</span><span class="instructor-name">Priya S.</span></td>
+                            <td><span class="class-name">Power Lift</span><span class="instructor-name">Arjun R.</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>10:00 AM</td>
+                            <td><span class="class-name">Spin</span><span class="instructor-name">Sneha M.</span></td>
+                            <td class="empty-cell">—</td>
+                            <td><span class="class-name">Spin</span><span class="instructor-name">Sneha M.</span></td>
+                            <td class="empty-cell">—</td>
+                            <td><span class="class-name">Spin</span><span class="instructor-name">Sneha M.</span></td>
+                            <td><span class="class-name">Yoga</span><span class="instructor-name">Priya S.</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>5:00 PM</td>
+                            <td><span class="class-name">Boxing</span><span class="instructor-name">Rahul K.</span></td>
+                            <td><span class="class-name">HIIT</span><span class="instructor-name">Sneha M.</span></td>
+                            <td><span class="class-name">Boxing</span><span class="instructor-name">Rahul K.</span></td>
+                            <td><span class="class-name">HIIT</span><span class="instructor-name">Sneha M.</span></td>
+                            <td><span class="class-name">Boxing</span><span class="instructor-name">Rahul K.</span></td>
+                            <td><span class="class-name">HIIT</span><span class="instructor-name">Sneha M.</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>7:00 PM</td>
+                            <td><span class="class-name">Power Lift</span><span class="instructor-name">Arjun R.</span></td>
+                            <td><span class="class-name">Yoga</span><span class="instructor-name">Priya S.</span></td>
+                            <td><span class="class-name">Power Lift</span><span class="instructor-name">Arjun R.</span></td>
+                            <td><span class="class-name">Yoga</span><span class="instructor-name">Priya S.</span></td>
+                            <td><span class="class-name">Power Lift</span><span class="instructor-name">Arjun R.</span></td>
+                            <td class="empty-cell">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+</section>
+
+    
+
+
+
+
+    <footer class="dark-footer position-relative">
+    <div class="containere pt-4 ">
+        <div class="row gy-5">
+            
+            <div class="col-lg-5 pe-lg-5">
+                <h2 class="text-white fw-bold mb-4">Raut<span class="fw-light">S</span></h2>
+                
+                <p class="text-white fs-4 lh-base mb-5 pe-lg-4">
+                    A Place Where Strength and<br>
+                    Community Grow Together
+                </p>
+                
+                <form action="#" method="POST" class="pe-lg-5">
+                    <div class="mb-4">
+                        <input type="email" class="form-control custom-newsletter-input" placeholder="Your Email Address" required>
+                    </div>
+                    <button type="submit" class="btn btn-subscribe rounded-0">SUBSCRIBE</button>
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Services</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><a href="#" class="footer-link">Personal Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Group Fitness Classes</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Strength and Conditioning</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Cardio Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Functional Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Wellness and Recovery</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">Contacts</h4>
+                
+                <address class="footer-text mb-3" style="font-style: normal;">
+                    27 Division St, New York,<br>
+                    NY 10002, USA
+                </address>
+                
+                <p class="footer-text mb-4">+91 8974563210</p>
+                <p class="text-white mb-4">rautsgym739@mail.com</p>
+                
+                <div class="d-flex gap-2 mt-2">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.091470661257!2d72.91517663145665!3d19.10364273410314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7c11244d31f%3A0x5455be6e1661b527!2sRaut&#39;s%20Gymnasium%20And%20Fitness%20Center!5e0!3m2!1sen!2sin!4v1774559609177!5m2!1sen!2sin" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps h-50 py-5"></iframe>
+        </div>
+    </div>
+
+    <div class="footer-bottom-bar border-top">
+        <div class="container position-relative">
+            <div class="row py-4 align-items-center">
+                
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="footer-text">Copyright © 2026 RautS byWebGeniusLab. All Rights Reserved</small>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end pe-md-5">
+                    <a href="#" class="footer-link small me-4">Terms of Use</a>
+                    <a href="#" class="footer-link small pe-md-4">Privacy Policy</a>
+                </div>
+                
+            </div>
+            
+            <a href="#" class="back-to-top d-none d-md-flex">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+            
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

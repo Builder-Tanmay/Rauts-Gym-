@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rauts2.0.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <title>ABOUT</title>
+    <style>
+        :root {
+            --bg-dark: #0f0f0f;
+            --footer-bg: #141414;
+            --text-gray: #a0a0a0;
+            --accent-white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--accent-white);
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(../IMG/B10_dark_top_red_bottom_fade.png);
+            background-size: cover;
+
+           
+        }
+        
+        
+        .content-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* --- About Section --- */
+        .chevron-down {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            display: block;
+            margin-top: -5px;
+        }
+
+        .video-container {
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .contact-circle {
+            width: 38px;
+            height: 38px;
+            background: #ffffff;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Stats Section --- */
+        .stat-item {
+            padding: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        .stat-item h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0;
+        }
+        .stat-divider {
+            border-right: 1px solid #2a2a2a;
+        }
+
+        /* --- Footer Section --- */
+        footer {
+            background-color: var(--footer-bg);
+            border-top: 1px solid #222;
+            padding-top: 80px;
+        }
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .footer-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .footer-link:hover {
+            color: #fff;
+        }
+        .newsletter-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #444;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 15px;
+            border-radius: 0;
+        }
+        .newsletter-input:focus {
+            outline: none;
+            border-bottom-color: #fff;
+        }
+        .subscribe-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .whatsapp-btn:hover {
+            color: rgb(15, 14, 14);
+            background-color: #20b858;
+        }
+
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            margin-right: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        .copyright-bar {
+            border-top: 1px solid #222;
+            padding: 25px 0;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .stat-divider { border: none; border-bottom: 1px solid #2a2a2a; }
+            .text-md-end { text-align: center !important; margin-top: 10px; }
+        }
+        .fw-bold{
+            color: red;
+        }
+       
+    </style>
+
+   
+</head>
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top align-item-center">
+        <div class="container-fluid">
+                <img src="IMG/Screenshot 2026-03-28 101138-Photoroom.png" alt="" height="70px" >
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto gap-5">
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2 ps-" aria-current="page" href="RAUTS 2.0.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2 " href="aboutpage.html">ABOUT</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Contect.html">CONTECT</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Services.html">SERVICES</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link active fw-bold text2" href="Schedule.html">SCHEDULE</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link active fw-bold no-underline me-2 join-link" href="https://wellversed.in/"><i class="fa-solid fa-cart-arrow-down"></i>SHOP NOW</a>
+                 </li>
+                
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+    <div class="container py-5">
+        
+            <div class="text-center mb-5 about-us">
+                <h1 class="fw-bold m-0 ">About Us</h1>
+                <i class="fa-solid fa-chevron-down chevron-down"></i>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="video-container mb-5">
+                    <div class="ratio ratio-16x9">
+                        <video controls autoplay muted loop poster="IMG/alora-griffiths-TuzrzArccvc-unsplash.jpg">
+                            <source src="videos/videoplayback.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="row pt-4 pb-5">
+                    <div class="col-md-7 pe-lg-5">
+                        <span class="text-uppercase about-btn fw-bold text-secondary mb-2 d-block" style="font-size: 0.7rem; letter-spacing: 2px;">About Us</span>
+                        <h2 class="fw-bold mb-4 display-6">We create a new approach <br> to fitness</h2>
+                        <p class="text-secondary lh-lg mb-4">
+                            At Strength Gym, we are passionate about helping you achieve your fitness goals and fostering a community that embraces a healthy and active lifestyle. Whether you're a seasoned fitness enthusiast or just starting your wellness journey, our state-of-the-art facility is designed.
+                        </p>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="contact-circle shadow">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="fw-bold">rautsgym739@mail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-5 ps-lg-5">
+                        <h4 class="fw-bold mb-4">Why Choose Us:</h4>
+                        <ul class="list-unstyled text-secondary lh-lg">
+                            <li class="mb-2"><i class="fa-solid fa-circle me-2" style="font-size: 0.4rem; vertical-align: middle;"></i> Experienced and certified instructors</li>
+                            <li class="mb-2"><i class="fa-solid fa-circle me-2" style="font-size: 0.4rem; vertical-align: middle;"></i> State-of-the-art equipment</li>
+                            <li class="mb-2"><i class="fa-solid fa-circle me-2" style="font-size: 0.4rem; vertical-align: middle;"></i> Diverse range of fitness programs</li>
+                            <li class="mb-2"><i class="fa-solid fa-circle me-2" style="font-size: 0.4rem; vertical-align: middle;"></i> Supportive and inclusive community</li>
+                            <li class="mb-2"><i class="fa-solid fa-circle me-2" style="font-size: 0.4rem; vertical-align: middle;"></i> Comfortable and welcoming environment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row text-center border-top border-secondary border-opacity-25 pt-4">
+                    <div class="col-md-3 col-6 stat-item stat-divider">
+                        <h1>236</h1>
+                        <p class="text-secondary small text-uppercase fw-bold">Trainers</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item stat-divider">
+                        <h1>755</h1>
+                        <p class="text-secondary small text-uppercase fw-bold">Exercises</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item stat-divider">
+                        <h1>338</h1>
+                        <p class="text-secondary small text-uppercase fw-bold">Groups</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <h1>1325</h1>
+                        <p class="text-secondary small text-uppercase fw-bold">Clients</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+<!-- Floating WhatsApp Icon -->
+<a href="https://wa.me/8591385545" target="_blank" class="whatsapp-btn">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+    <footer class="dark-footer position-relative">
+    <div class="containere pt-4 ">
+        <div class="row gy-5">
+            
+            <div class="col-lg-5 pe-lg-5">
+                <h2 class="text-white fw-bold mb-4">Raut<span class="fw-light">S</span></h2>
+                
+                <p class="text-white fs-4 lh-base mb-5 pe-lg-4">
+                    A Place Where Strength and<br>
+                    Community Grow Together
+                </p>
+                
+                <form action="#" method="POST" class="pe-lg-5">
+                    <div class="mb-4">
+                        <input type="email" class="form-control custom-newsletter-input" placeholder="Your Email Address" required>
+                    </div>
+                    <button type="submit" class="btn btn-subscribe rounded-0">SUBSCRIBE</button>
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-4">Services</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><a href="#" class="footer-link">Personal Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Group Fitness Classes</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Strength and Conditioning</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Cardio Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Functional Training</a></li>
+                    <li class="mb-3"><a href="#" class="footer-link">Wellness and Recovery</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">Contacts</h4>
+                
+                <address class="footer-text mb-3" style="font-style: normal;">
+                    27 Division St, New York,<br>
+                    NY 10002, USA
+                </address>
+                
+                <p class="footer-text mb-4">+91 8974563210</p>
+                <p class="text-white mb-4">rautsgym739@mail.com</p>
+                
+                <div class="d-flex gap-2 mt-2">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.091470661257!2d72.91517663145665!3d19.10364273410314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7c11244d31f%3A0x5455be6e1661b527!2sRaut&#39;s%20Gymnasium%20And%20Fitness%20Center!5e0!3m2!1sen!2sin!4v1774559609177!5m2!1sen!2sin" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps h-50 py-5"></iframe>
+        </div>
+    </div>
+
+    <div class="footer-bottom-bar border-top">
+        <div class="container position-relative">
+            <div class="row py-4 align-items-center">
+                
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="footer-text">Copyright © 2026 RautS byWebGeniusLab. All Rights Reserved</small>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end pe-md-5">
+                    <a href="#" class="footer-link small me-4">Terms of Use</a>
+                    <a href="#" class="footer-link small pe-md-4">Privacy Policy</a>
+                </div>
+                
+            </div>
+            
+            <a href="#" class="back-to-top d-none d-md-flex">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+            
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

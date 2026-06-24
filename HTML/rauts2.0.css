@@ -1,0 +1,829 @@
+
+
+/* nav bar  */
+/* =========================================
+   1. Dropdown Container Animation & Styling
+   ========================================= */
+
+/* Target desktop view for hover effects (Bootstrap breakpoints) */
+@media all and (min-width: 992px) {
+    .navbar .nav-item.dropdown  {
+        display: block; /* Required to allow transitions */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px); /* Start slightly lower for slide effect */
+        transition: all 0.3s ease-in-out;
+        border: none;
+        border-top: 3px solid #e32828; /* The red top border */
+        border-radius: 0; /* Square edges as seen in the video */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft drop shadow */
+        margin-top: 0;
+    }
+
+    /* Trigger the fade and slide on hover */
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); 
+    }
+}
+.join-link{
+    margin-left: 700px;
+}
+.navbar-brand{
+    color: red  ;
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   3. The Animated Red Dash
+   ========================================= */
+
+/* The invisible starting state of the dash */
+.dropdown-menu .dropdown-item::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0px; /* Starts with 0 width */
+    height: 2px;
+    background-color: #e32828; /* Red dash color */
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+/* Action on hover: Dash expands and appears */
+.dropdown-menu .dropdown-item:hover::before {
+    width: 10px; /* Dash grows to 10px long */
+    opacity: 1;
+}
+
+/* Optional: Make the parent "Blog" link turn red when the menu is open */
+.nav-item.dropdown:hover .nav-link {
+    color: #e32828 !important;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* =========================================
+   Navbar Links: Animated Red Underline (Excluding Dropdowns)
+   ========================================= */
+
+/* Ensure the link can hold absolute positioning, but IGNORE dropdown toggles */
+.navbar-nav .nav-link:not(.dropdown-toggle) {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* The starting state of the red line (hidden) */
+.navbar-nav .nav-link:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    bottom: 4px; /* Adjust this to move the line closer/further from the text */
+    left: 8px; /* Offsets Bootstrap's default left padding */
+    background-color: #e32828; /* The red color */
+    transition: width 0.3s ease-in-out;
+}
+
+/* The hover state: Draw the line */
+.navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
+    width: calc(100% - 16px); /* Spans the text width, minus the padding */
+}
+
+/* Optional: Make the text turn red on hover as well */
+.navbar-nav .nav-link:not(.dropdown-toggle):hover {
+    color: #e32828 !important; 
+}
+
+
+/* ----------------------------HERO BANNER CSS STYLE STARTED---------------------------------------------------------------------------------  */
+
+:root {
+            --brand-red: #f03a3a;
+            --bg-dark: #070707;
+            --text-grey: #8a8a8a;
+            --grid-line: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .heading-font {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Faint Background Grid Pattern */
+        .hero-wrapper {
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 60px 60px;
+            position: relative;
+            background-color: #000000;
+            background-image: url(../IMG/anastase-maragos-9dzWZQWZMdE-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main-images{
+        }
+
+        /* Typography Utilities */
+        .text-brand-red { color: var(--brand-red) !important; }
+        .text-grey { color: var(--text-grey) !important; }
+        .tracking-wide { letter-spacing: 2px; }
+        .tracking-widest { letter-spacing: 4px; }
+        
+        .main-headline {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: 1px;
+        }
+
+        .hero-paragraph {
+            max-width: 480px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Small Red Accents */
+        .accent-dash {
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--brand-red);
+        }
+
+        .accent-dash-sm {
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--brand-red);
+        }
+
+        /* =========================================
+           BUTTON & LINK HOVER EFFECTS
+           ========================================= */
+        
+        /* 1. Skewed Red Button */
+        .btn-skew {
+            display: inline-block;
+            background-color: var(--brand-red);
+            border: 2px solid var(--brand-red);
+            padding: 14px 35px;
+            transform: skewX(-15deg); /* Angles the button container */
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .btn-skew-text {
+            display: inline-block;
+            transform: skewX(15deg); /* Counter-angles the text to keep it straight */
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        /* The Hover State */
+        .btn-skew:hover {
+            background-color: transparent;
+            box-shadow: 0px 8px 25px rgba(240, 58, 58, 0.3);
+            transform: skewX(-15deg) translateY(-3px);
+        }
+
+        .btn-skew:hover .btn-skew-text {
+            color: var(--brand-red);
+        }
+
+        /* 2. Explore Classes Link */
+        .explore-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            position: relative;
+            padding-bottom: 6px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .explore-link .arrow {
+            transition: transform 0.3s ease;
+            margin-left: 8px;
+        }
+
+        /* The Animated Underline */
+        .explore-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--brand-red);
+            transition: width 0.3s ease;
+        }
+
+        /* The Hover State */
+        .explore-link:hover {
+            color: #ffffff;
+        }
+
+        .explore-link:hover::after {
+            width: 100%; /* Line expands */
+        }
+
+        .explore-link:hover .arrow {
+            transform: translateX(6px); /* Arrow shoots right */
+            color: var(--brand-red);
+        }
+
+        /* =========================================
+           RIGHT SIDEBAR LAYOUT
+           ========================================= */
+        .vertical-text-wrapper {
+            border-left: 1px solid rgba(255,255,255,0.08);
+            padding-left: 20px;
+            height: 60%;
+            display: flex;
+            align-items: center;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 0.65rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+        }
+
+/* ---------------------END------------------------------------ */
+
+
+
+/* 2nd page css style  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a; /* Dark background */
+    color: #f1efef;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.gym-about {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    background-image: url(../IMG/about\ hero\ banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1100px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap; /* Makes it responsive on mobile */
+}
+
+/* Left Content: Image Area */
+.image-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+}
+
+.main-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #303030; /* Placeholder for image */
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(../IMG/ambitious-studio-rick-barrett-03b61PY89hs-unsplash.jpg);
+    background-size: cover;
+
+}
+
+/* Red line accent on the top left */
+.main-image::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 2px;
+    height: 100px;
+    background-color: #e63946;
+}
+
+.watermark {
+    font-size: 15rem;
+    font-weight: 900;
+    color: #222;
+    font-family: 'Oswald', sans-serif;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -20px;
+    background-color: #e63946; /* The Raut Red */
+    padding: 25px;
+    text-align: center;
+    min-width: 130px;
+}
+
+.experience-badge .years {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1;
+}
+.eight{
+
+z-index: -1;
+}
+
+
+.experience-badge .label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Right Content: Typography & Grid */
+.text-content {
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.sub-headline {
+    color: #e63946;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sub-headline::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #e63946;
+    margin-right: 15px;
+}
+
+.main-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    line-height: 0.9;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #f1efef;
+}
+
+.description {
+    color: #aaa;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.feature-item {
+    border-left: 2px solid #333;
+    padding-left: 20px;
+}
+
+.feature-item h5 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #e63946;
+}
+
+.feature-item p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 80px;
+    }
+    .main-headline {
+        font-size: 3rem;
+    }
+}
+
+/* --------------------------------------------------------------2nd page css end here------------------------------------------------------ */
+/* servise style start here */
+.services {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 20px;
+      background: #000000;
+    }
+
+    .service {
+      width: 30%;
+      text-align: center;
+      color: aliceblue;
+      text-transform: capitalize;
+    }
+
+    .service h2 {
+      margin-bottom: 10px;
+      color: #ff0000;
+      text-transform: uppercase;
+    }
+    /* ---------------------------------------------------------------------------------------------------------------------- */
+
+/* hover box css style started here */
+.containercard {
+            padding: 40px 20px;
+            background: #000000;
+            min-height: 100vh;
+        }
+
+        .contcard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            justify-content: space-evenly;
+            
+            
+        }
+
+        .card {
+            width: 18rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+           box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+            background: rgb(6, 6, 6);
+            
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.05) !important;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25) !important;
+            z-index: 10;
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            color: #dc3545;
+            font-weight: 700;
+        }
+
+        .btn-danger {
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .contcard {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .card-body{
+            background-color: #000000;
+        }
+        .card-text{
+            color: #f1efef;
+        }
+
+/* Base styles and typography */
+:root {
+    --bg-color: #0f0f0f;
+    --text-light: #ffffff;
+    --text-muted: #8b8b8b;
+    --accent-red: #d32f2f;
+    --font-heading: 'Impact', 'Oswald', sans-serif; /* Fallbacks for the condensed, bold look */
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+
+.our {
+   max-width: 800px; 
+    margin: 0; /* Changed from '0 auto' to '0' to align left */
+    padding: 60px 20px;
+    background-color: #000000;
+    
+}
+
+/* Header Section */
+.section-header {
+    margin-bottom: 0px;
+    
+}
+
+.red-accent {
+    color: red;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section-header h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.intro-text {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0;
+    color: #dedede;
+}
+
+/* ------------------------------------------TRAINERS CSS STYLE ---------------------------------------- */
+:root {
+            --bg-dark: #0a0a0a;
+            --brand-red: #f03a3a;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+        }
+
+        /* Typography */
+        h1, h2, h3, .heading-font {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .tracking-widest {
+            letter-spacing: 3px;
+        }
+
+        /* Section Header Styling */
+        .section-header .accent-dash {
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: var(--brand-red);
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        .section-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        /* Trainer Card Styling with Images */
+        .trainer-card {
+            height: 450px;
+            border-radius: 0;
+            border: none;
+            position: relative;
+            background-size: cover;
+            background-position: center top;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* This dark gradient at the bottom ensures the white text is always readable over any image */
+            box-shadow: inset 0 -180px 120px -50px rgba(0, 0, 0, 0.95);
+        }
+
+        /* Hover effect */
+        .trainer-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Top Right Red Badge */
+        .badge-years {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--brand-red);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            letter-spacing: 1px;
+            z-index: 3;
+        }
+
+        /* Bottom Text Container */
+        .trainer-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .trainer-name {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Extra text shadow for readability */
+        }
+
+        .trainer-role {
+            color: var(--brand-red);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+        }
+        .ourtrainers{
+            display: flex;
+             justify-content: center;
+            justify-content: space-evenly;
+            background-image: url(../IMG/ambitious-studio-rick-barrett-03b61PY89hs-unsplash.jpg);
+            background-size: cover;
+
+        }
+
+/* -----------------------FOOTER------------------------------------------------- */
+/* =========================================
+   DARK THEME FOOTER STYLING
+   ========================================= */
+
+.dark-footer {
+    background-color: #0f0f11; /* The deep, matte black from the screenshot */
+    font-family: inherit;
+}
+
+/* General text color for addresses and copyright */
+.footer-text {
+    color: #8c8c8c;
+}
+
+/* Standard Links */
+.footer-link {
+    color: #8c8c8c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   Newsletter Input Form
+   ========================================= */
+
+.custom-newsletter-input {
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 1px solid #333333; /* The subtle bottom line */
+    border-radius: 0;
+    color: #ffffff;
+    padding: 10px 0;
+    box-shadow: none !important; /* Overrides Bootstrap's blue glow */
+    transition: border-color 0.3s ease;
+}
+
+/* Makes the placeholder text white */
+.custom-newsletter-input::placeholder {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+/* Highlight the bottom border white when clicked */
+.custom-newsletter-input:focus {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Subscribe Button */
+.btn-subscribe {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 12px 28px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-subscribe:hover {
+    background-color: #cccccc;
+}
+
+/* =========================================
+   Social Buttons & Bottom Bar
+   ========================================= */
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #333333;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+}
+
+.social-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* The divider line at the very bottom */
+.footer-bottom-bar.border-top {
+    border-top-color: #222222 !important; 
+}
+
+/* The Square Back-to-Top Button */
+.back-to-top {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55px;
+    height: 55px;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.back-to-top:hover {
+    background-color: #cccccc;
+    color: #000000;
+}
